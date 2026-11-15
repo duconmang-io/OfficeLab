@@ -31,6 +31,19 @@ a:focus-visible,button:focus-visible{outline:3px solid #3157E8;outline-offset:3p
 .fan:hover .sh:nth-child(3){rotate:4deg;translate:2% -3%}
 .fan:hover .sh:nth-child(4){rotate:12deg;translate:6% 1%}
 .band{display:flex;width:max-content}
+.sig{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background-image:linear-gradient(rgba(29,36,51,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(29,36,51,.055) 1px,transparent 1px);background-size:40px 40px;background-position:-1px -1px}
+.sg{position:absolute;opacity:.8;display:none}
+@media (prefers-reduced-motion:no-preference){
+.sg{display:block;animation-timing-function:linear;animation-iteration-count:infinite}
+@keyframes sr{from{left:-80px}to{left:calc(100vw + 20px)}}
+@keyframes sl{from{left:calc(100vw + 20px)}to{left:-80px}}
+@keyframes sd{from{top:-80px}to{top:calc(100vh + 20px)}}
+@keyframes p1{0%{left:-20px;top:280px}45%{left:520px;top:280px}100%{left:520px;top:calc(100vh + 20px)}}
+@keyframes p2{0%{left:calc(100vw + 20px);top:640px}40%{left:880px;top:640px}100%{left:880px;top:-20px}}
+@keyframes p3{0%{left:1040px;top:-20px}50%{left:1040px;top:480px}100%{left:-20px;top:480px}}
+.sr{animation-name:sr}.sl{animation-name:sl}.sd{animation-name:sd}.p1{animation-name:p1}.p2{animation-name:p2}.p3{animation-name:p3}
+}
+
 @media (prefers-reduced-motion:no-preference){
 @keyframes drop{from{opacity:0;translate:0 -45%;rotate:0deg;scale:.86}60%{opacity:1}to{opacity:1;translate:0 0;rotate:var(--r);scale:1}}
 @keyframes foldin{from{transform:scale(0)}to{transform:scale(1)}}
@@ -69,9 +82,24 @@ a:focus-visible,button:focus-visible{outline:3px solid #3157E8;outline-offset:3p
 </style>
 </head>
 <body>
-<div style="font-family: 'Be Vietnam Pro', sans-serif; color: #1D2433; background: #F7F6F2; font-size: 17px; line-height: 1.6">
+<div style="font-family: 'Be Vietnam Pro', sans-serif; color: #1D2433; position: relative; isolation: isolate; font-size: 17px; line-height: 1.6">
+<div class="sig" aria-hidden="true">
+<span class="sg sr" style="top: 159px; width: 64px; height: 3px; border-radius: 2px; background: linear-gradient(to right, rgba(0,0,0,0), #1FA968); animation-duration: 11s; animation-delay: -2s"></span>
+<span class="sg sl" style="top: 359px; width: 64px; height: 3px; border-radius: 2px; background: linear-gradient(to left, rgba(0,0,0,0), #E5484D); animation-duration: 14s; animation-delay: -7s"></span>
+<span class="sg sr" style="top: 519px; width: 64px; height: 3px; border-radius: 2px; background: linear-gradient(to right, rgba(0,0,0,0), #F08A24); animation-duration: 12s; animation-delay: -4s"></span>
+<span class="sg sl" style="top: 679px; width: 64px; height: 3px; border-radius: 2px; background: linear-gradient(to left, rgba(0,0,0,0), #1FA968); animation-duration: 16s; animation-delay: -10s"></span>
+<span class="sg sr" style="top: 839px; width: 64px; height: 3px; border-radius: 2px; background: linear-gradient(to right, rgba(0,0,0,0), #E5484D); animation-duration: 13s; animation-delay: -1s"></span>
+<span class="sg sd" style="left: 239px; width: 3px; height: 64px; border-radius: 2px; background: linear-gradient(to bottom, rgba(0,0,0,0), #F08A24); animation-duration: 10s; animation-delay: -3s"></span>
+<span class="sg sd" style="left: 559px; width: 3px; height: 64px; border-radius: 2px; background: linear-gradient(to bottom, rgba(0,0,0,0), #1FA968); animation-duration: 12s; animation-delay: -8s"></span>
+<span class="sg sd" style="left: 919px; width: 3px; height: 64px; border-radius: 2px; background: linear-gradient(to bottom, rgba(0,0,0,0), #E5484D); animation-duration: 11s; animation-delay: -5s"></span>
+<span class="sg sd" style="left: 1239px; width: 3px; height: 64px; border-radius: 2px; background: linear-gradient(to bottom, rgba(0,0,0,0), #F08A24); animation-duration: 14s; animation-delay: -1s"></span>
+<span class="sg p1" style="width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: #E5484D; box-shadow: 0 0 10px 2px #E5484D; animation-duration: 9s; animation-delay: -2s"></span>
+<span class="sg p2" style="width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: #1FA968; box-shadow: 0 0 10px 2px #1FA968; animation-duration: 11s; animation-delay: -6s"></span>
+<span class="sg p3" style="width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: #F08A24; box-shadow: 0 0 10px 2px #F08A24; animation-duration: 10s; animation-delay: -4s"></span>
+</div>
 
-<header style="border-bottom: 1px solid #DEDAD1; background: #F7F6F2">
+
+<header style="border-bottom: 1px solid #DEDAD1">
 <nav aria-label="Chính" style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
 <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1D2433">
 <img src="assets/officelab.svg" alt="" style="width: 40px; height: 40px">
@@ -149,7 +177,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #3157E8;outline-offset:3p
 </figure>
 </section>
 
-<section id="ung-dung" style="background: #FFFFFF; border-top: 1px solid #DEDAD1; border-bottom: 1px solid #DEDAD1">
+<section id="ung-dung" style="background: rgba(255, 255, 255, 0.82); border-top: 1px solid #DEDAD1; border-bottom: 1px solid #DEDAD1">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 112px">
 <h2 class="d rv" style="margin: 0; font-size: clamp(36px, 4.4vw, 56px); line-height: 1.02; font-weight: 760; letter-spacing: -0.03em; max-width: 16ch">Bốn ứng dụng, một cách làm việc quen thuộc.</h2>
 
@@ -301,7 +329,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #3157E8;outline-offset:3p
 </figure>
 </section>
 
-<section id="tai-ve" style="background: #EFEDE7; border-top: 1px solid #DEDAD1; border-bottom: 1px solid #DEDAD1">
+<section id="tai-ve" style="background: rgba(239, 237, 231, 0.82); border-top: 1px solid #DEDAD1; border-bottom: 1px solid #DEDAD1">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
 <h2 class="d" style="margin: 0; font-size: clamp(36px, 4.4vw, 56px); line-height: 1.02; font-weight: 760; letter-spacing: -0.03em">Tải OfficeLAB 1.5.0</h2>
 <p style="margin: 16px 0 0; max-width: 40em; color: #3A4252">Cho Windows 64-bit. Bộ cài chưa ký số: hãy đối chiếu mã SHA-256 bên dưới trước khi chạy. Sau 14 ngày dùng thử, liên hệ tác giả để nhận key.</p>
